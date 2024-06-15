@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://7hmkqmdonq45"]
+
+[ext_resource type="Script" path="res://scripts/ui/Hud.gd" id="1_p38dj"]
+
+[node name="Hud" type="Node2D"]
+script = ExtResource("1_p38dj")
+
+[node name="Health" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Health"
+
+[node name="Mana" type="Label" parent="."]
+offset_top = 24.0
+offset_right = 44.0
+offset_bottom = 47.0
+text = "Mana"
