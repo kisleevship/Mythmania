@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://bs455cewcacxa"]
+[gd_scene load_steps=2 format=3 uid="uid://bs455cewcacxa"]
+
+[ext_resource type="Script" path="res://scripts/level/LevelController.gd" id="1_j1lwx"]
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_j1lwx")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "This is level 1"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(572, 323)

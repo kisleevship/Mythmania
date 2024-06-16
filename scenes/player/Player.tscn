@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://df3w6n72srspg"]
+[gd_scene load_steps=4 format=3 uid="uid://df3w6n72srspg"]
 
 [ext_resource type="Script" path="res://scripts/player/Player.gd" id="1_2pbfv"]
+[ext_resource type="Texture2D" uid="uid://dftyk15etb47w" path="res://assets/units/right_arrow.png" id="2_13u0k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ii7p4"]
+radius = 11.0454
 
 [node name="Player" type="Node2D"]
+position = Vector2(81, 87)
 script = ExtResource("1_2pbfv")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_ii7p4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_13u0k")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.8, 1.8)
+
+[node name="Hud_position" type="Node2D" parent="Camera2D"]
+position = Vector2(-310, -168)
