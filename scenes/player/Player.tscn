@@ -6,17 +6,15 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ii7p4"]
 radius = 11.0454
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="CharacterBody2D"]
 position = Vector2(81, 87)
 script = ExtResource("1_2pbfv")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("CircleShape2D_ii7p4")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_13u0k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ii7p4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.8, 1.8)
