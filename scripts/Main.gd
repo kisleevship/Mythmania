@@ -38,7 +38,7 @@ func load_level(sceneMetadata: SceneMetadata):
 
 
 # Creates new scene from tscn_path and attaches it to parent 
-func load_new_scene(parent: Node2D, tscn_path: String) -> Variant:
+func load_new_scene(parent: Variant, tscn_path: String) -> Variant:
 	var tscn_instance
 	var tscn_resource = load(tscn_path)
 	if (tscn_resource):

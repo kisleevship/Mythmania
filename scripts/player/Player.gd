@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var MAX_SPEED = 110
 @export var ROLL_SPEED = 150
 
+@onready var canvasLayer = $CanvasLayer
+
 enum {
 	RUN,
 	ROLL,
@@ -21,7 +23,7 @@ var roll_finished = false
 
 func _ready():
 	Global.player = self
-	var hud = Global.main.load_new_scene(self, "res://scenes/ui/Hud.tscn")
+	var hud = Global.main.load_new_scene(canvasLayer, "res://scenes/ui/Hud.tscn")
 	Global.Hud = hud
 	# animation_tree.active = true TODO
 	
