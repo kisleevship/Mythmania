@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2umwis7u242i"]
+
+[ext_resource type="Texture2D" uid="uid://dx2bp4wo2gyin" path="res://assets/units/footman/footman_down.png" id="1_df5o7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqtx6"]
+radius = 11.0
+height = 56.25
+
+[node name="Footman" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_df5o7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+scale = Vector2(1.44, 0.32)
+shape = SubResource("CapsuleShape2D_iqtx6")

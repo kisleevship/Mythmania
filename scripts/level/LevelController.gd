@@ -5,7 +5,7 @@ extends Node2D
 func _ready():
 	var player = Global.main.load_new_scene(self, "res://scenes/player/Player.tscn")
 	Global.player = player
-
+	Global.loadedLevel = self
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

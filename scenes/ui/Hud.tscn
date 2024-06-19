@@ -18,11 +18,21 @@ offset_right = 44.0
 offset_bottom = 47.0
 text = "Mana"
 
-[node name="Button" type="Button" parent="."]
+[node name="SpawnFootmanBtn" type="Button" parent="."]
 offset_top = 49.0
 offset_right = 54.0
 offset_bottom = 95.0
 tooltip_text = "Spawn footman"
 icon = ExtResource("2_suv55")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="SpawnArcherBtn" type="Button" parent="."]
+visible = false
+offset_left = 1.0
+offset_top = 98.0
+offset_right = 55.0
+offset_bottom = 144.0
+tooltip_text = "Spawn footman"
+icon = ExtResource("2_suv55")
+
+[connection signal="pressed" from="SpawnFootmanBtn" to="." method="_on_SpawnFootmanBtn_pressed"]
+[connection signal="pressed" from="SpawnArcherBtn" to="." method="_on_SpawnArcherBtn_pressed"]

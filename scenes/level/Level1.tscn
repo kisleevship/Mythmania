@@ -377,6 +377,7 @@ tile_size = Vector2i(32, 32)
 sources/6 = SubResource("TileSetAtlasSource_5vub4")
 
 [node name="Level1" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_j1lwx")
 
 [node name="TileMap" type="TileMap" parent="."]

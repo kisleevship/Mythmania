@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/player/Player.gd" id="1_2pbfv"]
 [ext_resource type="Texture2D" uid="uid://dftyk15etb47w" path="res://assets/units/right_arrow.png" id="2_13u0k"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ii7p4"]
-radius = 11.0454
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0ofl"]
+size = Vector2(32, 32)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(81, 87)
@@ -14,9 +14,12 @@ script = ExtResource("1_2pbfv")
 texture = ExtResource("2_13u0k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ii7p4")
+shape = SubResource("RectangleShape2D_v0ofl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.8, 1.8)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SpawnerLocation" type="Node2D" parent="."]
+position = Vector2(0, -32)

@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var ACCELERATION = 450
 @export var FRICTION = 550
@@ -6,6 +7,7 @@ extends CharacterBody2D
 @export var ROLL_SPEED = 150
 
 @onready var canvasLayer = $CanvasLayer
+@onready var spawnerLocation = $SpawnerLocation
 
 enum {
 	RUN,

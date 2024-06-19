@@ -2,9 +2,10 @@ extends Node
 
 
 var main: Main
-var main_menu
-var player
-var Hud
+var main_menu: Node2D
+var player: Player
+var Hud: Node2D
+var loadedLevel: Node2D
 
 
 # Called when the node enters the scene tree for the first time.
