@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://df3w6n72srspg"]
+[gd_scene load_steps=5 format=3 uid="uid://df3w6n72srspg"]
 
 [ext_resource type="Script" path="res://scripts/player/Player.gd" id="1_2pbfv"]
 [ext_resource type="Texture2D" uid="uid://dftyk15etb47w" path="res://assets/units/right_arrow.png" id="2_13u0k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0ofl"]
 size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc4h7"]
+size = Vector2(72, 68)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(81, 87)
@@ -13,13 +16,23 @@ script = ExtResource("1_2pbfv")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_13u0k")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_v0ofl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.8, 1.8)
+position_smoothing_enabled = true
+position_smoothing_speed = 50.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SpawnerLocation" type="Node2D" parent="."]
-position = Vector2(0, -32)
+position = Vector2(0, -34)
+
+[node name="SpawnZone" type="Area2D" parent="."]
+
+[node name="SpawnCollisionShapeD" type="CollisionShape2D" parent="SpawnZone"]
+shape = SubResource("RectangleShape2D_hc4h7")
+
+[connection signal="body_entered" from="SpawnZone" to="." method="_on_spawn_zone_body_entered"]
+[connection signal="body_exited" from="SpawnZone" to="." method="_on_spawn_zone_body_exited"]

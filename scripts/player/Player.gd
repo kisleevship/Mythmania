@@ -1,13 +1,15 @@
 extends CharacterBody2D
 class_name Player
 
-@export var ACCELERATION = 450
+@export var ACCELERATION = 550
 @export var FRICTION = 550
-@export var MAX_SPEED = 110
+@export var MAX_SPEED = 150
 @export var ROLL_SPEED = 150
 
 @onready var canvasLayer = $CanvasLayer
 @onready var spawnerLocation = $SpawnerLocation
+@onready var collisionShape: CollisionShape2D = $PlayerCollisionShape
+@onready var spawnZone = $SpawnZone
 
 enum {
 	RUN,
@@ -22,6 +24,7 @@ enum {
 var roll_vector = Vector2.DOWN
 var state = RUN
 var roll_finished = false
+var spawnZoneCollisionsMap: Dictionary = {}
 
 func _ready():
 	Global.player = self
@@ -69,3 +72,14 @@ func run_state(delta):
 		#velocity = velocity * 0.9
 	#animation_state.travel("Roll")
 	#velocity = move_and_slide(velocity)
+
+
+func _on_spawn_zone_body_entered(body: Object):
+	print("entered zone " + str(body))
+	spawnZoneCollisionsMap[body.get_instance_id()] = body
+
+
+func _on_spawn_zone_body_exited(body):
+	print("exited zone " + str(body))
+	spawnZoneCollisionsMap.erase(body.get_instance_id())
+	
